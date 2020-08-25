@@ -1,0 +1,422 @@
+<!DOCTYPE HTML>
+<html>
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Sapient demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        @font-face {
+            font-family: 'Armata';
+            src: url('fonts/Armata-Regular-webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        body {
+            font-family: 'Armata';
+            margin: 0px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .inner-wrapper {
+            margin: 0 auto;
+            width: 980px;
+        }
+
+        .navigation-bar {
+            background-color: red;
+            height: 68px;
+        }
+
+        .center {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+
+        }
+
+        .navigation-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu {
+            padding-right: 20px;
+            color: white;
+            display: inline-block;
+        }
+
+        .menu.active {
+            color: black;
+        }
+
+        ul,
+        li {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+
+        .contact-us {
+            font-size: 50px;
+            color: gray;
+            border-bottom: 1px solid gray;
+        }
+
+        .images,
+        .p-top {
+            padding-top: 15px;
+        }
+
+        .image-bottom-color {
+            background-color: greenyellow;
+
+            height: 25px;
+            margin-top: -4px;
+        }
+
+        .content-wrapper {
+            display: flex;
+        }
+
+        .content {
+
+            font-size: 14px
+        }
+
+        input {
+            display: inline-block;
+        }
+
+        .form-business {
+            display: flex;
+
+            margin-top: 20px;
+        }
+
+        form div input {
+            font-size: 20px;
+            width: 100%;
+            height: 25px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid lightgrey;
+        }
+
+
+        .form-section {
+
+            padding-right: 10px;
+        }
+
+        .business-unit {
+
+            padding-top: 10px;
+
+        }
+
+        .business-wrapper {
+            border: 1px solid grey;
+            background-color: lightgrey;
+            padding-bottom: 10px;
+        }
+
+        .sapient {
+            padding-top: 10px;
+            padding-left: 10px;
+
+        }
+
+        input[type=checkbox]+label {
+            position: relative;
+            padding-left: 25px;
+        }
+
+        input[type=checkbox] {
+            display: none;
+        }
+
+        input[type=checkbox]+label:before {
+            content: "";
+            height: 15px;
+            width: 15px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border: 1px solid black;
+        }
+
+        input[type=checkbox]+label:after {
+            content: "";
+            height: 15px;
+            width: 15px;
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            background-color: grey;
+        }
+
+        .sapient-bu {
+            padding-left: 25px;
+            padding-top: 5px;
+        }
+
+        .bu {
+            padding-bottom: 10px;
+        }
+
+        .submit {
+            margin-left: auto;
+            width: 100px;
+        }
+
+        .slider-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            padding: 5px 5px 0px 0px;
+            z-index: 1;
+            background-color: white;
+        }
+
+        .slider-dot.active {
+            background-color: black;
+        }
+
+        .image-bottom-color a {
+            display: inline-block;
+        }
+
+        .slider {
+            padding-right: 15px;
+            float: right;
+        }
+
+        .image.active {
+            display: inline-block;
+        }
+
+        .images-wrap {
+            position: relative;
+            overflow: hidden;
+            height: 107px;
+        }
+
+        .images-slide {
+            display: flex;
+            width: 5000px;
+            position: relative;
+            top: 0px;
+        }
+
+        #navigation {
+            display: none;
+        }
+
+        @media screen and (max-width:767px) {
+            .images {
+                order: 1;
+            }
+
+            .navigation-menu {
+                display: none;
+            }
+
+            #navigation {
+                display: block;
+                height: 40px;
+                width: 70%;
+                align-self: center;
+            }
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="full-wrapper">
+        <header class="header">
+            <nav class="navigation-bar">
+                <div class="center container-md">
+                    <div class="company-icon"><img src="images/sapient-logo.png" /></div>
+                    <ul class="navigation-menu">
+                        <li value="Home" class="menu">Home </li>
+                        <li value="Aboutus" class="menu">About us</li>
+                        <li value="Projects" class="menu">Projects</li>
+                        <li value="Contactus" class="menu active">Contact us</li>
+                    </ul>
+                    <select name="navigation" id="navigation">
+                        <option value="Home">Home</option>
+                        <option value="Aboutus">About us</option>
+                        <option value="Projects">Projects</option>
+                        <option value="Contactus">Contact us</option>
+                    </select>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <section class="container-md">
+        <div class="contact-us">Contact US</div>
+        <div class="content-wrapper row">
+            <div class="images col-md-3 col-sm-12">
+                <div class="images-wrap">
+                    <div class="images-slide">
+                        <img src="images/item-1.png" class="image active" />
+                        <img src="images/item-2.png" class="image " />
+                        <img src="images/item-3.png" class="image " />
+                    </div>
+                </div>
+                <div class="image-bottom-color">
+                    <div class="slider">
+                        <a href="#" class="slider-dot active"></a>
+                        <a href="#" class="slider-dot"></a>
+                        <a href="#" class="slider-dot"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="content col-md-9 col-sm-12">
+                <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo repellendus ratione architecto
+                    ipsum
+                    magni inventore quisquam at, dolor, similique reprehenderit dolorum cumque alias nulla sed rerum!
+                    Minima nisi
+                    est cumque. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo repellendus ratione
+                    architecto
+                    ipsum magni inventore quisquam at.</div>
+                <div class="p-top">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo repellendus
+                    ratione
+                    architecto ipsummagni inventore quisquam at, dolor, similique reprehenderit dolorum cumque alias
+                    nulla sed rerum! Minima nisi
+                    est cumque. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo repellendus ratione
+                    architecto
+                    ipsum magni inventore quisquam at.</div>
+                <div class="form-business">
+                    <div class="form-section">
+                        <form>
+                            <div>
+                                <input type="text" placeholder="Firstname LastName"></input>
+                            </div>
+                            <div>
+                                <input type="password" placeholder="Password"></input>
+                            </div>
+                            <div>
+                                <input type="password" placeholder="Confirm password"></input>
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Email"></input>
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Website"></input>
+                            </div>
+                            <div class="submit">
+                                <input type="submit" value="Submit" name="Submit"></input>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div class="business-unit">
+                        <div class="bu">Business unit</div>
+
+                        <div class=business-wrapper>
+                            <div class="sapient"> <input type="checkbox" id="a" /><label for="a">Sapient</label></div>
+                            <ul>
+                                <li class="sapient-bu"><input type="checkbox" id="b"><label for="b">Sapient
+                                        Nitro</label></li>
+                                <li class="sapient-bu"><input type="checkbox" id="c"><label for="c">Sapient Global
+                                        Market</label></li>
+                                <li class="sapient-bu"><input type="checkbox" id="d"><label for="d">Sapient Government
+                                        Services</label>
+                                </li>
+                                <li class="sapient-bu"><input type="checkbox" id="e"><label for="e">Sapient m
+                                        (PHASIZE</label>)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        // $(document).ready(function () {
+        //   let inWidth = window.innerWidth;
+        //   if(innerWidth < 700){
+        //     $(".images-wrap,.images-wrap img").width(inWidth);
+        //   }
+        //   $( window ).resize(function() {
+
+        //     inrWidth = window.innerWidth;
+        //     if(innerWidth < 700){
+        //       $(".images-wrap,.images-wrap img").width(inWidth);
+        //     }else{
+        //       $(".images-wrap,.images-wrap img").width("auto")
+        //     }
+        // });
+
+        //   $(".slider-dot").click(function (e) {
+        //     e.preventDefault();
+        //     let index = $(this).index();
+        //     let imageWidth = inWidth;
+        //     let left = -(index * imageWidth) + "px";
+        //     $(".images-slide").animate({ "left": left }, 500);
+        //     $(".slider-dot.active").removeClass("active");
+        //     $(this).addClass("active");
+        //   })
+        // let ind = 0;
+        // Automatic click 
+        //setInterval(function () { 
+        //   $(".slider-dot").eq(ind).click();
+        //   ind++;
+        //   if(ind==3){ ind=0}
+        //   //$(".slider-dot.active").click();
+        // }, 1000);
+        //})
+        $(document).ready(function () {
+            $("select#navigation").change(function () {
+                let selectedMenu = $(this).children("option:selected").val();
+                $("li[value]").removeClass("active");
+                $("li[value=" + selectedMenu + "]").addClass("active");
+                //let selectedMenu = $(this).find(":selected").text();
+            })
+            let inWidth = $($(".images-wrap")).width();
+            $(".images-slide img").width(inWidth);
+            $(window).resize(function () {
+                inWidth = $($(".images-wrap")).width();
+                $(".images-slide img").width(inWidth);
+            })
+            $(".slider-dot").click(function (e) {
+                e.preventDefault();
+                let index = $(this).index();
+                let imageWidth = inWidth;
+                let left = -(index * imageWidth) + "px";
+                $(".images-slide").animate({ "left": left }, 500);
+                $(".slider-dot.active").removeClass("active");
+                $(this).addClass("active");
+            })
+            $(".menu").click(function () {
+                $(".menu.active").removeClass("active")
+                $(this).addClass("active")
+               let selectedValue =$(this).attr("value")
+               $("#navigation").val(selectedValue);
+                
+            })
+        })
+    </script>
+</body>
